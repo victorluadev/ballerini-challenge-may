@@ -1,8 +1,16 @@
+import { useState } from 'react';
+import { Container } from "./style";
+import Header from '../../components/Header';
+
+type TTheme = 'dark' | 'white';
+
 const Home = () => {
+  const [theme, setTheme] = useState<TTheme>('dark');
+  
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <Container theme={theme}>
+      <Header theme={theme}/>
+    </Container>
   )
 }
 
