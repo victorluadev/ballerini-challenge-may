@@ -27,7 +27,7 @@ const Header = ({ theme }: IHeader) => {
           theme={theme} 
           icon={LightIcon} 
           alt="ícone para troca de tema"
-           
+          isClickable
         />
         <Icon 
           theme={theme} 
