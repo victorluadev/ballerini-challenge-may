@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import { CONSTANTS } from "../../constants";
-import { ITheme } from "../../types/theme";
 
-export const Container = styled.div<ITheme>`
+export const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -10,8 +8,7 @@ export const Container = styled.div<ITheme>`
   position: absolute;
   align-items: center;
   overflow: hidden;
-  background-color: ${props => props.theme === "dark" ? CONSTANTS.COLORS.zinc900 : CONSTANTS.COLORS.zinc50
-  };
+  background-color: ${props => props.theme.body};
 `;
 
 export const SectionWrapper = styled.section`
@@ -27,7 +24,7 @@ export const Section = styled.section`
   flex-direction: column;
   justify-content: center;
   border-radius: 12px;
-  border: 1px solid ${CONSTANTS.COLORS.zinc800};
+  border: 1px solid ${props => props.theme.border};
   width: 50%;
 `;
 
@@ -45,16 +42,16 @@ export const InfoWrapper = styled.div`
   gap: 4px;
 `;
 
-export const Title = styled.h4<ITheme>`
+export const Title = styled.h4`
   font-size: 24px;
   font-weight: 700;
-  color: ${props => props.theme === "dark" ? CONSTANTS.COLORS.zinc400 : CONSTANTS.COLORS.zinc600};
+  color: ${props => props.theme.title};
 `;
 
 export const Subtitle = styled.p`
   font-size: 16px;
   font-weight: 400;
-  color: ${CONSTANTS.COLORS.zinc500};
+  color: ${props => props.theme.subtitle};
 `;
 
 export const IconWrapper = styled.div``;

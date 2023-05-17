@@ -1,15 +1,15 @@
-import { ITheme } from "../../types/theme";
 import { IconBody, IconImg } from "./style";
 
-interface IIcon extends ITheme {
+interface IIcon {
   icon: string;
   alt: string;
   isClickable?: boolean;
+  onClick?: React.ButtonHTMLAttributes<HTMLButtonElement>["onClick"];
 }
 
-const Icon = ({ theme, icon, alt, isClickable = false }: IIcon) => {
+const Icon = ({ icon, alt, isClickable = false, onClick }: IIcon) => {
   return (
-    <IconBody theme={theme} isClickable={isClickable}>
+    <IconBody isClickable={isClickable} onClick={onClick}>
       <IconImg src={icon} alt={alt} />
     </IconBody>
   )
