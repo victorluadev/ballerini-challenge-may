@@ -11,6 +11,7 @@ const COLORS = {
   "orange": "#F59E0B",
   "green": "#84CC16",
   "cyan": "#06B6D4",
+  "orangeTransparent": "rgba(245, 158, 11, 0.1);",
   "greenTransparent": "rgba(132, 204, 22, 0.1);",
   "cyanTransparent": "rgba(6, 182, 212, 0.1);"
 }

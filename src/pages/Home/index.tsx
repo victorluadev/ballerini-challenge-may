@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   Container,
   DetailsWrapper,
+  Divisor,
   IconWrapper,
   InfoWrapper,
   Section,
@@ -20,6 +21,7 @@ import RocketIcon from "../../assets/rocket.svg";
 import GithubIcon from "../../assets/github.svg";
 import LightIcon from "../../assets/light.svg";
 import TranslateIcon from "../../assets/translate.svg";
+import Badge from "../../components/Badge";
 
 const Home = () => {
   const [theme, setTheme] = useState<string>("dark");
@@ -58,6 +60,7 @@ const Home = () => {
                 <Icon icon={TimeIcon} alt="Ícone de ampulheta" />
               </IconWrapper>
             </DetailsWrapper>
+            <Divisor/>
           </Section>
           <Section>
             <DetailsWrapper>
@@ -69,6 +72,7 @@ const Home = () => {
                 <Icon icon={RocketIcon} alt="Ícone de foguete" />
               </IconWrapper>
             </DetailsWrapper>
+            <Divisor/>
           </Section>
         </SectionWrapper>
       </Container>
