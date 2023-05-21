@@ -21,7 +21,7 @@ import RocketIcon from "../../assets/rocket.svg";
 import GithubIcon from "../../assets/github.svg";
 import LightIcon from "../../assets/light.svg";
 import TranslateIcon from "../../assets/translate.svg";
-import Badge from "../../components/Badge";
+import Tasklist from "../../components/Tasklist";
 
 const Home = () => {
   const [theme, setTheme] = useState<string>("dark");
@@ -33,9 +33,9 @@ const Home = () => {
       <Container>
         <Header>
         <Icon 
-          onClick={toggleTheme}
           icon={LightIcon} 
           alt="ícone para troca de tema"
+          onClick={toggleTheme}
           isClickable
         />
         <Icon 
@@ -61,6 +61,7 @@ const Home = () => {
               </IconWrapper>
             </DetailsWrapper>
             <Divisor/>
+            <Tasklist/>
           </Section>
           <Section>
             <DetailsWrapper>
@@ -73,6 +74,7 @@ const Home = () => {
               </IconWrapper>
             </DetailsWrapper>
             <Divisor/>
+            <Tasklist/>
           </Section>
         </SectionWrapper>
       </Container>

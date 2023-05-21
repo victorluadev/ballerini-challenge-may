@@ -7,7 +7,9 @@ export const lightTheme = {
   icon: CONSTANTS.COLORS.zinc100,
   title: CONSTANTS.COLORS.zinc600,
   subtitle: CONSTANTS.COLORS.zinc500,
-  border: CONSTANTS.COLORS.zinc200
+  border: CONSTANTS.COLORS.zinc200,
+  inputBackground: CONSTANTS.COLORS.zinc100,
+  inputTextColor: CONSTANTS.COLORS.zinc400
 };
 
 export const darkTheme = {
@@ -17,5 +19,7 @@ export const darkTheme = {
   icon: CONSTANTS.COLORS.zinc800,
   title: CONSTANTS.COLORS.zinc400,
   subtitle: CONSTANTS.COLORS.zinc500,
-  border: CONSTANTS.COLORS.zinc800
+  border: CONSTANTS.COLORS.zinc800,
+  inputBackground: CONSTANTS.COLORS.zinc800,
+  inputTextColor: CONSTANTS.COLORS.zinc600
 };
