@@ -9,7 +9,10 @@ export const lightTheme = {
   subtitle: CONSTANTS.COLORS.zinc500,
   border: CONSTANTS.COLORS.zinc200,
   inputBackground: CONSTANTS.COLORS.zinc100,
-  inputTextColor: CONSTANTS.COLORS.zinc400
+  inputTextColor: CONSTANTS.COLORS.zinc400,
+  checkboxBackground: CONSTANTS.COLORS.zinc100,
+  checkboxBorder: CONSTANTS.COLORS.zinc200,
+  taskText: CONSTANTS.COLORS.zinc500
 };
 
 export const darkTheme = {
@@ -21,5 +24,8 @@ export const darkTheme = {
   subtitle: CONSTANTS.COLORS.zinc500,
   border: CONSTANTS.COLORS.zinc800,
   inputBackground: CONSTANTS.COLORS.zinc800,
-  inputTextColor: CONSTANTS.COLORS.zinc600
+  inputTextColor: CONSTANTS.COLORS.zinc600,
+  checkboxBackground: CONSTANTS.COLORS.zinc800,
+  checkboxBorder: CONSTANTS.COLORS.zinc700,
+  taskText: CONSTANTS.COLORS.zinc500
 };

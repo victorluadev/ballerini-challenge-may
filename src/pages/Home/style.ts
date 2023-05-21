@@ -57,6 +57,6 @@ export const Subtitle = styled.p`
 export const IconWrapper = styled.div``;
 
 export const Divisor = styled.hr`
-  margin: 0 24px 24px 24px;
+  margin: 0 24px;
   border: 1px solid ${props => props.theme.border};
 `;

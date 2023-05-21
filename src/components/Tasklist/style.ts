@@ -10,9 +10,28 @@ export const ListWrapper = styled.div`
 export const TasklistContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: flex-start;
   min-height: 382px;
+  max-height: 382px;
+  overflow-y: scroll;
+  gap: 16px;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #3F3F46; 
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555555; 
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -22,6 +41,7 @@ export const InputContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+  padding-top: 24px;
 `;
 
 export const InputText = styled.input`
