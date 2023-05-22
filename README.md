@@ -12,7 +12,8 @@ Tecnologias usadas durante o desenvolvimento:
 ## Requisitos ✅
 Requisitos que foram desenvolvidos durante a construção do projeto
 
-- [ ] Lista de tarefas para serem feitas no dia
+- [x] Tema escuro e claro
+- [x] Lista de tarefas para serem feitas no dia
 - [ ] Implementação de traduções (i18n)
 - [ ] Criar cronômetro em tempo real
 - [ ] Criar modos (Foco, pausa curta, pausa longa)
