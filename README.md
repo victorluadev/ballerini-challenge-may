@@ -24,6 +24,7 @@ Requisitos extras e melhorias que foram propostos para ser desenvolvido durante 
 - [ ] Opção de remover tarefas da lista
 - [ ] Configurar o tempo dos modos de foco
 - [ ] Componente para mensagens de erro ao usuário
+- [ ] Módulo de configuração de tempo do pomodoro
 
 ## Autor ✒
 

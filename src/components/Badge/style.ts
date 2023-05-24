@@ -6,10 +6,13 @@ interface IBadge {
 }
 
 export const BadgeWrapper = styled.div<IBadge>`
+  max-width: 127px;
+  max-height: 25px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  border-radius: 4px;
   gap: 8px;
   padding: 8px;
   

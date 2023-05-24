@@ -16,7 +16,8 @@ const Tasklist = () => {
 
   const handleKeyboardEvent = (event : React.KeyboardEvent<HTMLInputElement>) => {
     if(event.key === "Enter") {
-      addTask(name)
+      addTask(name);
+      setName("");
     }
   }
 

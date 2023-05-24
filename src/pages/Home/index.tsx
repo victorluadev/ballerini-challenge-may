@@ -22,6 +22,7 @@ import GithubIcon from "../../assets/github.svg";
 import LightIcon from "../../assets/light.svg";
 import TranslateIcon from "../../assets/translate.svg";
 import Tasklist from "../../components/Tasklist";
+import Pomodoro from "../../components/Pomodoro";
 
 const Home = () => {
   const [theme, setTheme] = useState<string>("dark");
@@ -61,7 +62,7 @@ const Home = () => {
               </IconWrapper>
             </DetailsWrapper>
             <Divisor/>
-            <Tasklist/>
+            <Pomodoro/>
           </Section>
           <Section>
             <DetailsWrapper>
