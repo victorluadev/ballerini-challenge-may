@@ -3,11 +3,12 @@ import { BadgeIcon, BadgeText, BadgeWrapper } from "./style";
 import focusBadge from '../../assets/focus.svg';
 import longBadge from '../../assets/cyanTea.svg';
 import shortBadge from '../../assets/orangeTea.svg';
+import { TMode } from "../../types/pomodoro";
 
-type TBadge = "focus" | "long" | "short";
+
 
 interface IBadge {
-  type: TBadge;
+  type: TMode;
 }
 
 const Badge = ({ type }: IBadge) => {

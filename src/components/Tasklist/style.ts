@@ -76,7 +76,7 @@ export const InputButton = styled.button`
   cursor: pointer;
 
   &:active {
-    opacity: 0.75;
+    opacity: 1.1;
   }
 
   &:hover {

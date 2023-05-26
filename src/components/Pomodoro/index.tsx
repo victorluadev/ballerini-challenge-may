@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import {
+  ActionSubtitle,
+  ActionTexts,
+  ActionTitle,
+  ActionWrapper,
   BadgeContainer,
   ClockContainer,
   InfoContainer,
@@ -15,13 +19,16 @@ import Clock from "./Clock";
 import { CircularProgressbarWithChildren  } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { ConfigPomodoro } from './config';
+import Button from '../Button';
+import { TMode } from '../../types/pomodoro';
 
 const Pomodoro = () => {
   const order = ConfigPomodoro.order;
 
   const [time, setTime] = useState<number>();
-  const [current, setCurrent] = useState<string>("");
-  const [previous, setPrevious] = useState<string>("");
+  const [next, setNext] = useState<TMode>("short");
+  const [current, setCurrent] = useState<TMode>("focus");
+  const [previous, setPrevious] = useState<TMode>("");
   const [percentage, setPercentage] = useState<number>(0);
 
   return (
@@ -33,7 +40,7 @@ const Pomodoro = () => {
             <InfoSubtitle>Cíclo atual do cronômetro</InfoSubtitle>
           </InfoContent>
           <BadgeContainer>
-            <Badge type="focus" />
+            <Badge type={current} />
           </BadgeContainer>
         </InfoLineContainer>
         <InfoLineContainer>
@@ -42,7 +49,7 @@ const Pomodoro = () => {
             <InfoSubtitle>Qual cíclo será ativado</InfoSubtitle>
           </InfoContent>
           <BadgeContainer>
-            <Badge type="long" />
+            <Badge type={next} />
           </BadgeContainer>
         </InfoLineContainer>
       </InfoContainer>
@@ -50,6 +57,13 @@ const Pomodoro = () => {
         <CircularProgressbarWithChildren value={percentage}>
           <Clock time={time}/>
         </CircularProgressbarWithChildren>
+        <ActionWrapper>
+          <ActionTexts>
+            <ActionTitle>Parabéns! 🎉</ActionTitle>
+            <ActionSubtitle>Você chegou no fim de mais um cíclo dessa sessão!</ActionSubtitle>
+          </ActionTexts>
+          <Button mode={current}/>
+        </ActionWrapper>
       </ClockContainer>
     </PomodoroWrapper>
   );

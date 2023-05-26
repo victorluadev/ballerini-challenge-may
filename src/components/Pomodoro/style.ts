@@ -4,6 +4,7 @@ export const PomodoroWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 24px;
+  gap: 64px;
 `;
 
 export const InfoContainer = styled.div`
@@ -44,18 +45,40 @@ export const InfoSubtitle = styled.p`
 `;
 
 export const ClockContainer = styled.div`
-  height: 272px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 24px;
-  margin-top: 64px;
+  gap: 32px;
 `;
 
-export const ClockNumber = styled.p`
-  font-family: "Rajdhani", sans-serif;
+export const ActionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+`;
+
+export const ActionTexts = styled.div`
+  display: flex;
+  max-width: 214px;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 16px;
+`;
+
+export const ActionTitle = styled.h2`
   font-weight: 700;
-  font-size: 64px;
-  color: ${props => props.theme.pomodoroClockTime};
+  font-size: 28px;
+  color: ${props => props.theme.actionTitle};
+`;
+
+export const ActionSubtitle = styled.p`
+  text-align: justify;
+  font-weight: 400;
+  font-size: 16px;
+  color: ${props => props.theme.subtitle};
 `;

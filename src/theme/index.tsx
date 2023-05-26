@@ -15,7 +15,8 @@ export const lightTheme = {
   taskText: CONSTANTS.COLORS.zinc500,
   pomodoroTitle: CONSTANTS.COLORS.zinc500,
   pomodoroSubtitle: CONSTANTS.COLORS.zinc400,
-  pomodoroClockTime: CONSTANTS.COLORS.zinc600
+  pomodoroClockTime: CONSTANTS.COLORS.zinc600,
+  actionTitle: CONSTANTS.COLORS.zinc700
 };
 
 export const darkTheme = {
@@ -33,5 +34,6 @@ export const darkTheme = {
   taskText: CONSTANTS.COLORS.zinc500,
   pomodoroTitle: CONSTANTS.COLORS.zinc400,
   pomodoroSubtitle: CONSTANTS.COLORS.zinc500,
-  pomodoroClockTime: CONSTANTS.COLORS.zinc100
+  pomodoroClockTime: CONSTANTS.COLORS.zinc100,
+  actionTitle: CONSTANTS.COLORS.zinc100
 };

@@ -1,0 +1,1 @@
+export type TMode = "focus" | "long" | "short" | "";
