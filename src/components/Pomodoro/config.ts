@@ -10,8 +10,8 @@ export const ConfigPomodoro = {
     "long"
   ],
   times: {
-    focus: 25,
-    short: 5,
-    long: 15
+    focus: "00:25:00",
+    short: "00:05:00",
+    long: "00:15:00"
   }
 }
