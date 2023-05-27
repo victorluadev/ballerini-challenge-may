@@ -24,9 +24,7 @@ import { TMode } from "../../types/pomodoro";
 import { TimeToSeconds } from "../../utils/TimeToSeconds";
 
 const Pomodoro = () => {
-  // ConfigPomodoro.order;
 
-  const [pastTime, setPastTime] = useState<number>(0);
   const [time, setTime] = useState<number>(0);
   const [next, setNext] = useState<TMode>("short");
   const [current, setCurrent] = useState<TMode>("focus");
@@ -57,9 +55,7 @@ const Pomodoro = () => {
   const regressive = (count: number = 0) => {
     setTimeout(() => {
       if (count > 0) {
-        console.log(count - 1);
         setTime(count - 1);
-        setPastTime(count);
 
         return regressive(count - 1);
       }
