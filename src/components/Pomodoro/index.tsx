@@ -16,41 +16,39 @@ import {
 
 import Badge from "../Badge";
 import Clock from "./Clock";
-import { CircularProgressbarWithChildren } from "react-circular-progressbar";
+import {
+  CircularProgressbarWithChildren,
+  buildStyles,
+} from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { ConfigPomodoro } from "./config";
 import Button from "../Button";
 import { TMode } from "../../types/pomodoro";
 import { TimeToSeconds } from "../../utils/TimeToSeconds";
+import { CONSTANTS } from "../../constants";
 
-const Pomodoro = () => {
+interface IPomodoro {
+  theme: string
+}
 
+const Pomodoro = ({ theme }: IPomodoro) => {
   const [time, setTime] = useState<number>(0);
   const [next, setNext] = useState<TMode>("short");
   const [current, setCurrent] = useState<TMode>("focus");
-  const [previous, setPrevious] = useState<TMode>("");
   const [percentage, setPercentage] = useState<number>(0);
-  const [row, setRow] = useState<number>(0);
+  const [row, setRow] = useState<number>(1);
 
-  // useEffect(() => {
-  //   const totalTime = TimeToSeconds(getTime());
-    
-  //   totalTime * 0.25 === time ? setPercentage(25) :
-  //   totalTime * 0.50 === time ? setPercentage(50) :
-  //   totalTime * 0.75 === time ? setPercentage(75) :
-  //   totalTime === time && setPercentage(100);
-
-  // }, [time]);
+  useEffect(() => {
+    const totalTime = TimeToSeconds(getTime());
+    setPercentage(totalTime - time);
+  }, [time]);
 
   const startCicle = () => {
     const timeInSeconds = TimeToSeconds(getTime());
 
     setTime(timeInSeconds);
-    console.log(timeInSeconds);
-    console.log('a ' + time);
-
     regressive(timeInSeconds);
-  }
+  };
 
   const regressive = (count: number = 0) => {
     setTimeout(() => {
@@ -60,9 +58,9 @@ const Pomodoro = () => {
         return regressive(count - 1);
       }
 
-      // endCicle();
+      endCicle();
     }, 1000);
-  }
+  };
 
   const getTime = () => {
     return current === "focus"
@@ -73,7 +71,18 @@ const Pomodoro = () => {
   };
 
   const endCicle = () => {
+    setRow(row + 1);
 
+    if (row <= 7) {
+      setCurrent(ConfigPomodoro.order[row] as TMode);
+      setNext(ConfigPomodoro.order[row + 1] as TMode);
+      
+    } else {
+      setCurrent("focus");
+      setNext("short");
+
+      setRow(1);
+    }
   };
 
   return (
@@ -94,15 +103,29 @@ const Pomodoro = () => {
             <InfoSubtitle>Qual cíclo será ativado</InfoSubtitle>
           </InfoContent>
           <BadgeContainer>
-          {next !== "" && <Badge type={next} />}
+            {next !== "" && next !== undefined && <Badge type={next} />}
           </BadgeContainer>
         </InfoLineContainer>
       </InfoContainer>
       <ClockContainer>
-        <CircularProgressbarWithChildren value={percentage}>
+        <CircularProgressbarWithChildren
+          value={percentage}
+          maxValue={TimeToSeconds(getTime())}
+          strokeWidth={6.5}
+          styles={buildStyles({
+            pathColor: `${
+              current === "focus"
+                ? CONSTANTS.COLORS.green
+                : current === "short"
+                ? CONSTANTS.COLORS.orange
+                : CONSTANTS.COLORS.cyan
+            }`,
+            trailColor: `${theme === "dark" ? CONSTANTS.COLORS.zinc800 : CONSTANTS.COLORS.zinc100}`
+          })}
+        >
           <Clock time={time} />
         </CircularProgressbarWithChildren>
-        <ActionWrapper style={{display: `${time > 0 ? 'none' : 'flex'}`}}>
+        <ActionWrapper style={{ display: `${time > 0 ? "none" : "flex"}` }}>
           <ActionTexts>
             <ActionTitle>Parabéns! 🎉</ActionTitle>
             <ActionSubtitle>

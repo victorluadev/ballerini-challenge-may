@@ -62,7 +62,7 @@ const Home = () => {
               </IconWrapper>
             </DetailsWrapper>
             <Divisor/>
-            <Pomodoro/>
+            <Pomodoro theme={theme}/>
           </Section>
           <Section>
             <DetailsWrapper>
