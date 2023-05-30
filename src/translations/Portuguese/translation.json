@@ -1,0 +1,22 @@
+{
+  "headerTitle": "Pomodoro",
+  "headerSubtitle": "Gerencie seu tempo de maneira mágica!",
+  "sessionTitle": "Dados da sessão",
+  "sessionSubtitle": "Acompanhe os próximos ciclos",
+  "currentMode": "Modo atual:",
+  "currentDescription": "Cíclo atual do cronômetro",
+  "nextMode": "Próximo modo:",
+  "nextDescription": "Qual cíclo será ativado",
+  "tasklistTitle": "Lista de tarefas",
+  "tasklistSubtitle": "Seus objetivos para essa sessão",
+  "inputPlaceholder": "Nova Tarefa",
+  "inputButton": "Adicionar",
+  "congratulations": "Parabéns 🎉",
+  "finalMessage": "Você chegou no fim de mais um cíclo dessa sessão!",
+  "focus": "Foco",
+  "short": "Pausa curta",
+  "long": "Pausa longa",
+  "buttonFocus": "Iniciar: Foco",
+  "buttonShort": "Iniciar: Pausa curta",
+  "buttonLong": "Iniciar: Pausa longa"
+}

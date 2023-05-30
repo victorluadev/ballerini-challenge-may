@@ -6,7 +6,7 @@ export const Container = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 54px 0;
-  width: 80vw;
+  width: 1120px;
 `;
 
 export const InfoWrapper = styled.header`

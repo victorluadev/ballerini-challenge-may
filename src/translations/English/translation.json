@@ -1,0 +1,22 @@
+{
+  "headerTitle": "Pomodoro",
+  "headerSubtitle": "Manage your time in a magical way!",
+  "sessionTitle": "Session data",
+  "sessionSubtitle": "Follow the next cycles",
+  "currentMode": "Current mode:",
+  "currentDescription": "Current stopwatch cycle",
+  "nextMode": "Next mode:",
+  "nextDescription": "Which cycle will be activated",
+  "tasklistTitle": "To-Do list",
+  "tasklistSubtitle": "Your goals for this session",
+  "inputPlaceholder": "New Task",
+  "inputButton": "Add",
+  "congratulations": "Congrats 🎉",
+  "finalMessage": "You have reached the end of another cycle of this session!",
+  "focus": "Focus",
+  "short": "Short break",
+  "long": "Long break",
+  "buttonFocus": "Start: Focus",
+  "buttonShort": "Start: Short break",
+  "buttonLong": "Start: Long break"
+}

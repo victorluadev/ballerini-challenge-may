@@ -16,7 +16,7 @@ Requisitos que foram desenvolvidos durante a construção do projeto
 - [x] Lista de tarefas para serem feitas no dia
 - [x] Criar cronômetro em tempo real
 - [x] Criar modos (Foco, pausa curta, pausa longa)
-- [ ] Implementação de traduções (i18n)
+- [x] Implementação de traduções (i18n)
 
 ## Requisitos Extras ☑
 Requisitos extras e melhorias que foram propostos para ser desenvolvido durante o desafio

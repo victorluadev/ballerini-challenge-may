@@ -23,11 +23,24 @@ import LightIcon from "../../assets/light.svg";
 import TranslateIcon from "../../assets/translate.svg";
 import Tasklist from "../../components/Tasklist";
 import Pomodoro from "../../components/Pomodoro";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
+
   const [theme, setTheme] = useState<string>("dark");
+  const [language, setLanguage] = useState<string>("en-US");
   const isDarkTheme = theme === "dark";
+  const isEnglish = language === "en-US";
+  
   const toggleTheme = () => setTheme(isDarkTheme ? "light" : "dark");
+
+  const onClickChangeLanguage = () => {
+    setLanguage(isEnglish ? "ptBR" : "en-US");
+    console.log(language)
+    i18n.changeLanguage(language);
+
+  };
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
@@ -39,14 +52,17 @@ const Home = () => {
           onClick={toggleTheme}
           isClickable
         />
-        <Icon 
-          icon={GithubIcon} 
-          alt="link para o github"
-          isClickable
-        />
+        <a href="https:/github.com/victorluadev" target="_blank" rel="noreferrer">
+          <Icon 
+            icon={GithubIcon} 
+            alt="link para o github"
+            isClickable
+          />
+        </a>
         <Icon
           icon={TranslateIcon}
           alt="ícone para troca de idioma"
+          onClick={onClickChangeLanguage}
           isClickable
         />
         </Header>
@@ -54,8 +70,8 @@ const Home = () => {
           <Section>
             <DetailsWrapper>
               <InfoWrapper>
-                <Title>Dados da sessão</Title>
-                <Subtitle>Acompanhe os próximos ciclos</Subtitle>
+                <Title>{t('sessionTitle')}</Title>
+                <Subtitle>{t('sessionSubtitle')}</Subtitle>
               </InfoWrapper>
               <IconWrapper>
                 <Icon icon={TimeIcon} alt="Ícone de ampulheta" />
@@ -67,8 +83,8 @@ const Home = () => {
           <Section>
             <DetailsWrapper>
               <InfoWrapper>
-                <Title>Lista de tarefas</Title>
-                <Subtitle>Seus objetivos para essa sessão</Subtitle>
+                <Title>{t('tasklistTitle')}</Title>
+                <Subtitle>{t('tasklistSubtitle')}</Subtitle>
               </InfoWrapper>
               <IconWrapper>
                 <Icon icon={RocketIcon} alt="Ícone de foguete" />

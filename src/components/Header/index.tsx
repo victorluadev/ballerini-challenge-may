@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   ActionWrapper,
   Container,
@@ -10,11 +11,13 @@ interface IHeader {
   children: string | JSX.Element | JSX.Element[];
 }
 const Header = ({children}: IHeader) => {
+  const { t } = useTranslation();
+
   return (
     <Container>
       <InfoWrapper>
-        <Title>Pomodoro</Title>
-        <Subtitle>Gerencie seu tempo de maneira mágica!</Subtitle>
+        <Title>{t('headerTitle')}</Title>
+        <Subtitle>{t('headerSubtitle')}</Subtitle>
       </InfoWrapper>
       <ActionWrapper>
         {children}

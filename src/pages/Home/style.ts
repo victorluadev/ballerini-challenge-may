@@ -15,7 +15,7 @@ export const SectionWrapper = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 80vw;
+  width: 1120px;
   gap: 36px;
 `;
 

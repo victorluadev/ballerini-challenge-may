@@ -8,8 +8,11 @@ import {
   TasklistContainer,
 } from "./style";
 import Task from "./components/Task";
+import { useTranslation } from "react-i18next";
 
 const Tasklist = () => {
+  const { t } = useTranslation();
+
   const [name, setName] = useState<string>("");
   const [tasks, setTasks] = useState<string[]>([]);
   const [error, setError] = useState<string>();
@@ -35,11 +38,11 @@ const Tasklist = () => {
       <InputContainer>
         <InputText
           value={name}
-          placeholder="Nova Tarefa"
+          placeholder={t('inputPlaceholder') as string}
           onChange={(e) => setName(e.target.value)}
           onKeyDown={(e) => handleKeyboardEvent(e)}
         />
-        <InputButton onClick={() => addTask(name)}>Adicionar</InputButton>
+        <InputButton onClick={() => addTask(name)}>{t('inputButton')}</InputButton>
       </InputContainer>
     </ListWrapper>
   );

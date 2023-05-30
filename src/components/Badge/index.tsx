@@ -5,30 +5,33 @@ import longBadge from '../../assets/cyanTea.svg';
 import shortBadge from '../../assets/orangeTea.svg';
 import { TMode } from "../../types/pomodoro";
 
-
+import { useTranslation } from "react-i18next";
 
 interface IBadge {
   type: TMode;
 }
 
 const Badge = ({ type }: IBadge) => {
+
+  const { t } = useTranslation();
+
   return (
     <BadgeWrapper type={type}>
       {type === "focus" ? (
         <>
           <BadgeIcon src={focusBadge} alt="ícone de foco"/>
-          <BadgeText>Foco</BadgeText>
+          <BadgeText>{t('focus')}</BadgeText>
         </>
       ):
       type === "short" ? (
         <>
           <BadgeIcon src={shortBadge} alt="ícone de pausa curta"/>
-          <BadgeText>Pausa Curta</BadgeText>
+          <BadgeText>{t('short')}</BadgeText>
         </>
       ) : (
         <>
           <BadgeIcon src={longBadge} alt="ícone de pausa longa"/>
-          <BadgeText>Pausa Longa</BadgeText>
+          <BadgeText>{t('long')}</BadgeText>
         </>
       )}
     </BadgeWrapper>

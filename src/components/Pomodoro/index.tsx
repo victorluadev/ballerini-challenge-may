@@ -26,12 +26,15 @@ import Button from "../Button";
 import { TMode } from "../../types/pomodoro";
 import { TimeToSeconds } from "../../utils/TimeToSeconds";
 import { CONSTANTS } from "../../constants";
+import { useTranslation } from "react-i18next";
 
 interface IPomodoro {
   theme: string
 }
 
 const Pomodoro = ({ theme }: IPomodoro) => {
+  const { t } = useTranslation();
+
   const [time, setTime] = useState<number>(0);
   const [next, setNext] = useState<TMode>("short");
   const [current, setCurrent] = useState<TMode>("focus");
@@ -90,8 +93,8 @@ const Pomodoro = ({ theme }: IPomodoro) => {
       <InfoContainer>
         <InfoLineContainer>
           <InfoContent>
-            <InfoTitle>Modo atual:</InfoTitle>
-            <InfoSubtitle>Cíclo atual do cronômetro</InfoSubtitle>
+            <InfoTitle>{t('currentMode')}</InfoTitle>
+            <InfoSubtitle>{t('currentDescription')}</InfoSubtitle>
           </InfoContent>
           <BadgeContainer>
             {current !== "" && <Badge type={current} />}
@@ -99,8 +102,8 @@ const Pomodoro = ({ theme }: IPomodoro) => {
         </InfoLineContainer>
         <InfoLineContainer>
           <InfoContent>
-            <InfoTitle>Próximo modo:</InfoTitle>
-            <InfoSubtitle>Qual cíclo será ativado</InfoSubtitle>
+            <InfoTitle>{t('nextMode')}</InfoTitle>
+            <InfoSubtitle>{t('nextDescription')}</InfoSubtitle>
           </InfoContent>
           <BadgeContainer>
             {next !== "" && next !== undefined && <Badge type={next} />}
@@ -127,9 +130,9 @@ const Pomodoro = ({ theme }: IPomodoro) => {
         </CircularProgressbarWithChildren>
         <ActionWrapper style={{ display: `${time > 0 ? "none" : "flex"}` }}>
           <ActionTexts>
-            <ActionTitle>Parabéns! 🎉</ActionTitle>
+            <ActionTitle>{t('congratulations')}</ActionTitle>
             <ActionSubtitle>
-              Você chegou no fim de mais um cíclo dessa sessão!
+            {t('finalMessage')}
             </ActionSubtitle>
           </ActionTexts>
           <Button mode={current} onClick={() => startCicle()} />
